@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Afters by Kali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amaranth&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fffaf4;
+      --accent: #d9a86c;
+      --text: #4b3223;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg) url('images/parchment1.png') repeat;
+      background-size: cover;
+      background-blend-mode: lighten;
+      color: var(--text);
+    }
+    header {
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Amaranth', sans-serif;
+      font-size: 1.8rem;
+    }
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--text);
+    }
+    nav a:hover { color: var(--accent); }
+    main {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(255,255,255,0.9);
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Amaranth', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo"><a href="index.html"><img src="images/afters1.png" alt="Afters by Kali"></a></div>
+      <div>
+        <a href="about.html">About</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#order">Order</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1>About Afters by Kali</h1>
+    <p>Afters by Kali is a small batch bakery dedicated to crafting nostalgic, homemade-style cookies. Every cookie is made with care, quality ingredients, and a touch of vintage charm. Whether you're grabbing a dozen for yourself or gifting to a friend, Afters by Kali delivers sweet moments in every bite.</p>
+  </main>
+  <footer>&copy; 2025 Afters by Kali. All rights reserved.</footer>
+</body>
+</html>
