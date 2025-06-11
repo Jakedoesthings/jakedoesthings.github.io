@@ -1,148 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afters by Kali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fffaf4;
+      --accent: #d9a86c;
+      --text: #3c2f2f;
+    }
+
     body {
-      background: #FFF8F0 url('parchment1.png') top center/cover;
-      color: #3C2F2F;
-      font-family: 'Cormorant Garamond', serif;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
       scroll-behavior: smooth;
     }
-    h1, h2, h3, nav a, button {
-      font-family: 'Pacifico', cursive;
+
+    header {
+      position: fixed;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 999;
     }
+
     nav {
-      background: #D5A06B;
+      max-width: 1000px;
+      margin: auto;
       padding: 1rem;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
     nav a {
-      color: #FFF8F0;
       margin: 0 1rem;
       text-decoration: none;
-      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 600;
     }
-    section {
-      background: rgba(255,248,240,0.9);
-      margin: 2rem auto;
-      max-width: 800px;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.6s forwards ease-out;
+
+    .hero {
+      padding-top: 100px;
+      text-align: center;
+      background: var(--bg);
     }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: none; }
+
+    .hero img {
+      max-width: 220px;
+      height: auto;
     }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #menu h2, #order h2, #contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
     }
+
     .cookie-card {
-      background: #FFF;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      background: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
     }
+
     .cookie-card img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
+      height: auto;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
     }
-    .cookie-card .info {
-      padding: 1rem;
-    }
-    .cookie-card h3 {
-      margin-top: 0;
-    }
-    form input, form textarea {
-      background: rgba(255,255,255,0.7);
-    }
-    button {
-      background: #D5A06B;
-      color: #FFF8F0;
-      border: none;
-      border-radius: 5px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1.1rem;
-    }
+
     footer {
-      background: #D5A06B;
-      color: #FFF8F0;
       text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      font-size: 0.875rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <div><strong>Afters by Kali</strong></div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<header>
-  <img src="Afters1.png" alt="Afters by Kali Logo" />
-  <h1>Afters by Kali</h1>
-  <p>Homemade cookies with vintage soul</p>
-</header>
+  <section class="hero" id="home">
+    <img src="images/logo-transparent.png" alt="Afters by Kali logo">
+    <h1>Handmade Cookies, Baked with Love</h1>
+  </section>
 
-<nav>
-  <a href="#menu">Menu</a>
-  <a href="#order">Order</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <section id="menu" class="section">
+    <h2>Our Cookies</h2>
+    <div class="menu-grid">
+      <div class="cookie-card">
+        <img src="images/classic-choco-chip.jpg" alt="Classic Choco Chip">
+        <h3>Classic Choco Chip</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/cookie-butter.jpg" alt="Cookie Butter">
+        <h3>Cookie Butter</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/choco-candy.jpg" alt="Choco Candy">
+        <h3>Choco Candy</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/caramel-choco-chip.jpg" alt="Caramel Choco Chip">
+        <h3>Caramel Choco Chip</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/cookies-n-creme.jpg" alt="Cookies n' Creme">
+        <h3>Cookies n' Creme</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/oatmeal.jpg" alt="Oatmeal">
+        <h3>Oatmeal</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/snickerdoodle.jpg" alt="Snickerdoodle">
+        <h3>Snickerdoodle</h3>
+      </div>
+      <div class="cookie-card">
+        <img src="images/sugar-cookie.jpg" alt="Sugar Cookie">
+        <h3>Sugar Cookie</h3>
+      </div>
+    </div>
+  </section>
 
-<section id="menu">
-  <h2>Our Cookies</h2>
-  <div class="menu-item">
-    <h3>Chocolate Chip Classic</h3>
-    <p>Chewy, gooey, and golden — our house favorite.</p>
-  </div>
-  <div class="menu-item">
-    <h3>Oatmeal Cream Dream</h3>
-    <p>Old-school oatmeal cookies sandwiched with sweet vanilla cream.</p>
-  </div>
-  <div class="menu-item">
-    <h3>Peanut Butter + Jam</h3>
-    <p>Nutty, rich, and swirled with homemade berry jam.</p>
-  </div>
-  <!-- Add more menu items here -->
-</section>
+  <section id="order" class="section">
+    <h2>Order</h2>
+    <p>Email us your order with the cookies you want, quantity, and pickup/delivery preference:</p>
+    <p><strong>Email:</strong> <a href="mailto:aftersbykali@gmail.com">aftersbykali@gmail.com</a></p>
+  </section>
 
-<section id="order">
-  <h2>Place an Order</h2>
-  <form action="mailto:aftersbykali@gmail.com" method="post" enctype="text/plain">
-    <label for="name">Your Name:</label>
-    <input type="text" name="name" required />
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Follow us on social media for new drops and cookie inspo!</p>
+    <p>
+      <a href="https://instagram.com/aftersbykali" target="_blank">Instagram</a> |
+      <a href="https://facebook.com/aftersbykali" target="_blank">Facebook</a>
+    </p>
+  </section>
 
-    <label for="email">Your Email:</label>
-    <input type="email" name="email" required />
-
-    <label for="order">Your Order:</label>
-    <textarea name="order" rows="5" required></textarea>
-
-    <button type="submit">Send Order</button>
-  </form>
-  <p><em>We’ll follow up with availability and pickup info!</em></p>
-</section>
-
-<section id="contact">
-  <h2>Connect With Us</h2>
-  <p>
-    Instagram: <a href="https://www.instagram.com/aftersbykali" target="_blank">@aftersbykali</a><br>
-    Facebook: <a href="https://www.facebook.com/aftersbykali" target="_blank">Afters by Kali</a><br>
-    Email: <a href="mailto:your-email@example.com">your-email@example.com</a>
-  </p>
-</section>
-
-<footer>
-  <p>© 2025 Afters by Kali. Made with butter & love.</p>
-</footer>
-
+  <footer>
+    &copy; 2025 Afters by Kali. All rights reserved.
+  </footer>
 </body>
 </html>
 
