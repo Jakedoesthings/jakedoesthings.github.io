@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Afters by Kali</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf4;
+      color: #3c2f2f;
+    }
+    header {
+      background: #f8e1c4;
+      padding: 2rem;
+      text-align: center;
+    }
+    header img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+    nav {
+      background: #d5aa72;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      border-bottom: 2px solid #d5aa72;
+      padding-bottom: 0.5rem;
+    }
+    .menu-item {
+      margin: 1.5rem 0;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background: #d5aa72;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background: #f8e1c4;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="Afters1.png" alt="Afters by Kali Logo" />
+  <h1>Afters by Kali</h1>
+  <p>Homemade cookies with vintage soul</p>
+</header>
+
+<nav>
+  <a href="#menu">Menu</a>
+  <a href="#order">Order</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="menu">
+  <h2>Our Cookies</h2>
+  <div class="menu-item">
+    <h3>Chocolate Chip Classic</h3>
+    <p>Chewy, gooey, and golden — our house favorite.</p>
+  </div>
+  <div class="menu-item">
+    <h3>Oatmeal Cream Dream</h3>
+    <p>Old-school oatmeal cookies sandwiched with sweet vanilla cream.</p>
+  </div>
+  <div class="menu-item">
+    <h3>Peanut Butter + Jam</h3>
+    <p>Nutty, rich, and swirled with homemade berry jam.</p>
+  </div>
+  <!-- Add more menu items here -->
+</section>
+
+<section id="order">
+  <h2>Place an Order</h2>
+  <form action="mailto:aftersbykali@gmail.com" method="post" enctype="text/plain">
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" required />
+
+    <label for="email">Your Email:</label>
+    <input type="email" name="email" required />
+
+    <label for="order">Your Order:</label>
+    <textarea name="order" rows="5" required></textarea>
+
+    <button type="submit">Send Order</button>
+  </form>
+  <p><em>We’ll follow up with availability and pickup info!</em></p>
+</section>
+
+<section id="contact">
+  <h2>Connect With Us</h2>
+  <p>
+    Instagram: <a href="https://www.instagram.com/aftersbykali" target="_blank">@aftersbykali</a><br>
+    Facebook: <a href="https://www.facebook.com/aftersbykali" target="_blank">Afters by Kali</a><br>
+    Email: <a href="mailto:your-email@example.com">your-email@example.com</a>
+  </p>
+</section>
+
+<footer>
+  <p>© 2025 Afters by Kali. Made with butter & love.</p>
+</footer>
+
+</body>
+</html>
+
+
