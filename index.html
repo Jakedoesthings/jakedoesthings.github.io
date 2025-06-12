@@ -94,9 +94,14 @@
     .section:first-of-type {
       padding-top: 8.5rem;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .section:first-of-type {
-        padding-top: 6rem;
+        padding-top: 10rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .section:first-of-type {
+        padding-top: 12rem;
       }
     }
     .section.visible { opacity: 1; transform: translateY(0); }
@@ -111,7 +116,6 @@
       font-weight: 700;
     }
 
-    /* Uniform tagline for sections */
     .menu-tagline {
       font-size: 1.18rem;
       color: #a07940;
@@ -121,7 +125,6 @@
       letter-spacing: 0.01em;
     }
 
-    /* Pricing Bar */
     .pricing-bar {
       display: flex;
       justify-content: center;
@@ -174,7 +177,6 @@
       box-shadow: 0 2px 16px #edd6b282, 0 1px 5px #0001;
       padding: 2.3rem 1.2rem 2.5rem 1.2rem;
     }
-    /* Menu Cookie Cards */
     .menu-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
       margin-top: 2rem;
@@ -217,7 +219,6 @@
       letter-spacing: 0.01em;
     }
 
-    /* Uniform Reviews */
     .review-card {
       background: var(--review-bg);
       padding: 1.3rem 2rem 1.1rem 2rem;
@@ -233,7 +234,6 @@
       text-align: center;
     }
 
-    /* Uniform Order Section */
     #order.section {
       background: #f7f2e8;
       border-radius: 2rem;
@@ -270,7 +270,6 @@
       font-weight: 600;
     }
 
-    /* Uniform Form & Buttons */
     form {
       background: var(--form-highlight);
       padding: 2rem;
@@ -323,7 +322,6 @@
     }
     form button:hover, .social-buttons a:hover { background: #b8854f; }
 
-    /* Uniform Socials */
     .social-buttons { 
       display: flex; justify-content: center; gap: 2rem;
       margin-top: 1.2rem; flex-wrap: wrap;
@@ -332,7 +330,6 @@
       margin-top: 0;
     }
 
-    /* Footer */
     footer {
       text-align: center; 
       padding: 2rem 1rem; 
