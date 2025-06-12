@@ -17,6 +17,11 @@
       --menu-label-bg: #f7eddc;
       --review-bg: #fdf7f0;
       --form-highlight: #faecd9;
+      --section-max: 1000px;
+      --section-pad: 4rem 1rem;
+      --card-radius: 1.3rem;
+      --card-border: 1.5px solid #e9d7bb;
+      --card-shadow: 0 2px 10px #ddc7ad41;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -42,7 +47,7 @@
     }
     header.shrink { padding: 0.4rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
     nav {
-      max-width: 1000px; margin: auto; padding: 0.5rem 1rem;
+      max-width: var(--section-max); margin: auto; padding: 0.5rem 1rem;
       display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
       font-family: 'Amaranth', sans-serif; font-size: 1.8rem;
     }
@@ -50,8 +55,14 @@
     .nav-links { display: flex; }
     nav a {
       margin: 0 1rem; text-decoration: none; color: var(--text); transition: color 0.3s;
+      font-family: 'Amaranth', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 0.7rem;
+      padding: 0.3rem 0.6rem;
     }
-    nav a:hover { color: var(--accent2); }
+    nav a:hover, nav a.active { color: var(--accent2); background: #f9efe3; }
     .menu-toggle { display: none; cursor: pointer; font-size: 2rem; }
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
@@ -62,38 +73,37 @@
     }
 
     .section {
-      padding: 4rem 1rem; max-width: 1000px; margin: auto;
-      opacity: 0; transform: translateY(20px);
+      padding: var(--section-pad); 
+      max-width: var(--section-max); 
+      margin: 0 auto 0 auto;
+      opacity: 0; 
+      transform: translateY(20px);
       transition: opacity 0.6s ease, transform 0.6s ease;
+      background: transparent;
     }
     .section.visible { opacity: 1; transform: translateY(0); }
+
     h2 {
       font-family: 'Amaranth', sans-serif;
       font-size: 2.4rem;
-      margin-bottom: 0.8rem;
-      text-align: center;
-      letter-spacing: 0.04em;
       color: var(--accent2);
-      position: relative;
+      text-align: center;
+      margin: 0 0 1.5rem 0;
+      letter-spacing: 0.04em;
+      font-weight: 700;
     }
-    #menu h2 { margin-bottom: 0.3rem; }
+
+    /* Uniform tagline for sections */
     .menu-tagline {
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       color: #a07940;
       text-align: center;
       font-family: 'Amaranth', sans-serif;
       margin-bottom: 2.1rem;
       letter-spacing: 0.01em;
     }
-    .menu-label {
-      background: var(--menu-label-bg);
-      border: 2.5px dashed #e7c18f;
-      border-radius: 2.5rem;
-      margin: 2rem auto 2rem auto;
-      max-width: 640px;
-      box-shadow: 0 2px 16px #edd6b282, 0 1px 5px #0001;
-      padding: 2.3rem 1.2rem 2.5rem 1.2rem;
-    }
+
+    /* Pricing Bar */
     .pricing-bar {
       display: flex;
       justify-content: center;
@@ -128,7 +138,6 @@
       border-radius: 1px;
     }
     @media (max-width: 600px) {
-      .menu-label { padding: 1.1rem 0.2rem 1.6rem 0.2rem; }
       .pricing-bar {
         flex-direction: column;
         gap: 0.4rem;
@@ -137,17 +146,35 @@
       }
       .pricing-bar .divider { display: none; }
     }
+
+   .menu-label {
+  background: var(--menu-label-bg);
+  border: 1.5px solid #e7c18f;
+  border-radius: 2.5rem;
+  margin: 2rem auto 2rem auto;
+  max-width: 700px;
+  box-shadow: 0 2px 16px #edd6b282, 0 1px 5px #0001;
+  padding: 2.3rem 1.2rem 2.5rem 1.2rem;
+    }
+    /* Menu Cookie Cards */
     .menu-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
       margin-top: 2rem;
     }
     .cookie-card {
-      background: var(--card-bg); padding: 1.5rem;
-      border-radius: 1.3rem;
-      box-shadow: 0 2px 10px #ddc7ad41, 0 1px 5px #0000000a;
+      background: var(--card-bg); 
+      padding: 1.5rem;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
       text-align: center;
-      border: 1.5px solid #e9d7bb;
+      border: var(--card-border);
+      font-family: 'Amaranth', sans-serif;
       transition: transform 0.38s, box-shadow 0.38s, border-color 0.28s;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
     }
     .cookie-card:hover {
       transform: translateY(-10px) scale(1.04) rotate(-1deg);
@@ -155,73 +182,86 @@
       border-color: var(--accent2);
     }
     .cookie-card img {
-      width: 100%; height: auto; border-radius: 1rem; margin-bottom: 0.75rem;
+      width: 100%; max-width: 160px;
+      height: auto; 
+      border-radius: 1rem; 
+      margin-bottom: 0.75rem;
       border: 1.2px solid #eadfc7;
       box-shadow: 0 1px 7px #f2e2c858;
+      background: #fff8ef;
     }
-    .cookie-card h3 { font-size: 1.25rem; margin: 0.6rem 0 0.1rem 0; font-family: 'Amaranth', sans-serif; }
+    .cookie-card h3 { 
+      font-size: 1.18rem; 
+      margin: 0.5rem 0 0.1rem 0; 
+      font-family: 'Amaranth', sans-serif; 
+      color: var(--text);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
 
+    /* Uniform Reviews */
     .review-card {
       background: var(--review-bg);
-      padding: 1.4rem 2rem 1.1rem 2rem;
+      padding: 1.3rem 2rem 1.1rem 2rem;
       margin: 1.2rem auto;
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 10px #e5c19126;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
       font-family: 'Amaranth', sans-serif;
       font-style: normal;
-      font-size: 1.17rem;
+      font-size: 1.15rem;
       color: #7c5a3b;
       max-width: 700px;
-      border: 1.5px solid #eedcbb;
+      border: var(--card-border);
       text-align: center;
     }
 
-    /* Stepper */
-    .stepper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2.4rem;
-      gap: 2.2rem;
-    }
-    .step {
-      display: flex; flex-direction
-      : column; align-items: center;
-    }
-    .step-circle {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--accent);
-      color: #fff; font-size: 1.32rem; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 8px #e5c19136;
-      margin-bottom: 0.4rem;
-      border: 2.2px solid #efd2aa;
-    }
-    .step-label {
-      font-family: 'Amaranth', sans-serif;
-      font-size: 1.03rem;
-      color: #a07940;
-      margin-top: 0.1rem;
-      text-align: center;
-      letter-spacing: 0.03em;
-    }
-
-    /* Order Form */
+    /* Uniform Order Section */
     #order.section {
       background: #f7f2e8;
       border-radius: 2rem;
       box-shadow: 0 1px 18px #ebdbbe1e;
       margin-top: 3rem;
     }
+    .stepper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2.2rem;
+      gap: 2.2rem;
+    }
+    .step {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .step-circle {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--accent);
+      color: #fff; font-size: 1.22rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px #e5c19136;
+      margin-bottom: 0.4rem;
+      border: 2.2px solid #efd2aa;
+      font-family: 'Amaranth', sans-serif;
+    }
+    .step-label {
+      font-family: 'Amaranth', sans-serif;
+      font-size: 1.01rem;
+      color: #a07940;
+      margin-top: 0.1rem;
+      text-align: center;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+    }
+
+    /* Uniform Form & Buttons */
     form {
       background: var(--form-highlight);
       padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 8px #e9c48e35;
+      border-radius: var(--card-radius);
+      box-shadow: var(--card-shadow);
       max-width: 700px; margin: 0 auto;
-      border: 1.5px solid #e4cdaa;
+      border: var(--card-border);
     }
-    form label { font-weight: 600; display: block; margin-top: 1rem; color: #91632d; }
+    form label { font-weight: 600; display: block; margin-top: 1rem; color: #91632d; font-family: 'Amaranth', sans-serif;}
     form input,
     form textarea {
       width: 100%; padding: 0.8rem; margin-top: 0.5rem;
@@ -246,29 +286,40 @@
       text-align: center;
       letter-spacing: 0.02em;
     }
-    form button {
-      margin-top: 1.5rem; background: var(--accent2); color: white;
-      padding: 1rem 2rem; border: none; border-radius: 0.9rem;
-      font-size: 1.15rem; font-family: 'Amaranth', sans-serif; letter-spacing: 0.01em;
-      cursor: pointer; transition: background 0.3s, box-shadow 0.3s;
-      box-shadow: 0 1px 7px #edc18345;
-    }
-    form button:hover { background: #b8854f; box-shadow: 0 3px 14px #c3884336; }
-
-    .social-buttons { display: flex; justify-content: center; gap: 2rem;
-      margin-top: 1rem; flex-wrap: wrap;
-    }
-    .social-buttons a {
-      background: var(--accent2); color: white; padding: 1rem 2rem;
-      border-radius: 2rem; font-size: 1.2rem; text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;
+    form button, .social-buttons a {
+      background: var(--accent2);
+      color: white;
+      border-radius: 2rem;
       font-family: 'Amaranth', sans-serif;
+      font-size: 1.1rem;
+      padding: 1rem 2rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 7px #edc18345;
+      transition: background 0.3s;
+      margin-top: 1.3rem;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
       letter-spacing: 0.02em;
     }
-    .social-buttons a:hover { background: #b8854f; transform: translateY(-3px); }
+    form button:hover, .social-buttons a:hover { background: #b8854f; }
 
+    /* Uniform Socials */
+    .social-buttons { 
+      display: flex; justify-content: center; gap: 2rem;
+      margin-top: 1.2rem; flex-wrap: wrap;
+    }
+    .social-buttons a {
+      margin-top: 0;
+    }
+
+    /* Footer */
     footer {
-      text-align: center; padding: 2rem 1rem; font-size: 0.94rem; color: #b4976b;
+      text-align: center; 
+      padding: 2rem 1rem; 
+      font-size: 0.97rem; 
+      color: #b4976b;
       font-family: 'Amaranth', sans-serif;
       background: transparent;
     }
