@@ -6,14 +6,17 @@
   <title>Afters by Kali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amaranth&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amaranth&family=Shadows+Into+Light&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fffaf4;
       --accent: #d9a86c;
+      --accent2: #c38843;
       --text: #4b3223;
       --card-bg: rgba(255,255,255,0.97);
+      --menu-label-bg: #f7eddc;
       --review-bg: #fdf7f0;
+      --form-highlight: #faecd9;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -48,7 +51,7 @@
     nav a {
       margin: 0 1rem; text-decoration: none; color: var(--text); transition: color 0.3s;
     }
-    nav a:hover { color: var(--accent); }
+    nav a:hover { color: var(--accent2); }
     .menu-toggle { display: none; cursor: pointer; font-size: 2rem; }
     @media (max-width: 768px) {
       .menu-toggle { display: block; }
@@ -64,28 +67,28 @@
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .section.visible { opacity: 1; transform: translateY(0); }
-    #menu h2, #reviews h2, #order h2, #socials h2 {
-      font-size: 2.5rem; margin-bottom: 2rem; text-align: center;
+    #menu h2 {
+      font-family: 'Amaranth', sans-serif;
+      font-size: 2.6rem; margin-bottom: 0.3rem; text-align: center;
+      letter-spacing: 0.04em;
     }
-
-    .menu-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
+    .menu-tagline {
+      font-size: 1.18rem;
+      color: var(--accent2);
+      text-align: center;
+      font-family: 'Shadows Into Light', cursive;
+      margin-bottom: 2.1rem;
+      letter-spacing: 0.03em;
     }
-    .cookie-card {
-      background: var(--card-bg); padding: 1.5rem; border-radius: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;
-      transition: transform 0.4s, box-shadow 0.4s;
+    .menu-label {
+      background: var(--menu-label-bg);
+      border: 2.5px dashed #e7c18f;
+      border-radius: 2.5rem;
+      margin: 2rem auto 2rem auto;
+      max-width: 640px;
+      box-shadow: 0 2px 16px #edd6b282, 0 1px 5px #0001;
+      padding: 2.3rem 1.2rem 2.5rem 1.2rem;
     }
-    .cookie-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    .cookie-card img {
-      width: 100%; height: auto; border-radius: 1rem; margin-bottom: 0.75rem;
-    }
-    .cookie-card h3 { font-size: 1.6rem; margin: 0.5rem 0; }
-
-    /* VINTAGE PRICING BAR */
     .pricing-bar {
       display: flex;
       justify-content: center;
@@ -93,68 +96,158 @@
       gap: 1.6rem;
       background: #f9efe3;
       color: var(--text);
-      font-family: 'Amaranth', serif;
-      font-size: 1.14rem;
+      font-family: 'Amaranth', sans-serif;
+      font-size: 1.19rem;
       font-weight: 700;
-      border-radius: 1.6rem;
+      border-radius: 1.5rem;
       border: 1.5px solid #e4cdaa;
-      max-width: 580px;
-      margin: 2.6rem auto 1.5rem auto;
-      padding: 1.1rem 1.4rem;
+      max-width: 440px;
+      margin: 0.6rem auto 0.2rem auto;
+      padding: 1.02rem 1.1rem;
       box-shadow: 0 1px 8px rgba(120,72,40,0.08);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.025em;
     }
     .pricing-bar span {
       display: flex;
       align-items: center;
-      font-size: 1.14rem;
+      font-size: 1.17rem;
       padding: 0 0.3rem;
+      text-shadow: 0 1px 0 #fffdf8, 0 2px 2px #f3e6cd6e;
     }
     .pricing-bar .divider {
       width: 1px;
-      height: 26px;
+      height: 24px;
       background: #e4cdaa;
       opacity: 0.6;
       margin: 0 0.2rem;
       border-radius: 1px;
     }
     @media (max-width: 600px) {
+      .menu-label { padding: 1.1rem 0.2rem 1.6rem 0.2rem; }
       .pricing-bar {
         flex-direction: column;
         gap: 0.4rem;
         padding: 1.2rem 0.6rem;
+        max-width: 95vw;
       }
       .pricing-bar .divider { display: none; }
     }
+    .menu-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;
+      margin-top: 2rem;
+    }
+    .cookie-card {
+      background: var(--card-bg); padding: 1.5rem;
+      border-radius: 1.3rem;
+      box-shadow: 0 2px 10px #ddc7ad41, 0 1px 5px #0000000a;
+      text-align: center;
+      border: 1.5px solid #e9d7bb;
+      transition: transform 0.38s, box-shadow 0.38s, border-color 0.28s;
+    }
+    .cookie-card:hover {
+      transform: translateY(-10px) scale(1.04) rotate(-1deg);
+      box-shadow: 0 12px 36px #e5bc7a38, 0 4px 16px #0002;
+      border-color: var(--accent2);
+    }
+    .cookie-card img {
+      width: 100%; height: auto; border-radius: 1rem; margin-bottom: 0.75rem;
+      border: 1.2px solid #eadfc7;
+      box-shadow: 0 1px 7px #f2e2c858;
+    }
+    .cookie-card h3 { font-size: 1.28rem; margin: 0.6rem 0 0.1rem 0; font-family: 'Amaranth', sans-serif; }
 
+    /* Review Card */
     .review-card {
-      background: var(--review-bg); padding: 1.5rem 2rem; margin: 1.5rem auto;
-      border-radius: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      font-style: italic; font-size: 1.1rem; max-width: 800px;
+      background: var(--review-bg);
+      padding: 1.4rem 2rem 1.1rem 2rem;
+      margin: 1.2rem auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 10px #e5c19126;
+      font-family: 'Shadows Into Light', cursive;
+      font-style: normal;
+      font-size: 1.18rem;
+      color: #7c5a3b;
+      max-width: 700px;
+      border: 1.5px solid #eedcbb;
     }
 
-    form {
-      background: var(--card-bg); padding: 2rem; border-radius: 1.5rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 700px; margin: 0 auto;
+    /* Stepper */
+    .stepper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2.4rem;
+      gap: 2.2rem;
     }
-    form label { font-weight: 600; display: block; margin-top: 1rem; }
+    .step {
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .step-circle {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--accent);
+      color: #fff; font-size: 1.32rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 8px #e5c19136;
+      margin-bottom: 0.4rem;
+      border: 2.2px solid #efd2aa;
+    }
+    .step-label {
+      font-family: 'Amaranth', sans-serif;
+      font-size: 1.03rem;
+      color: #a07940;
+      margin-top: 0.1rem;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+
+    /* Order Form */
+    form {
+      background: var(--form-highlight);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 8px #e9c48e35;
+      max-width: 700px; margin: 0 auto;
+      border: 1.5px solid #e4cdaa;
+    }
+    form label { font-weight: 600; display: block; margin-top: 1rem; color: #91632d; }
     form input,
     form textarea {
       width: 100%; padding: 0.8rem; margin-top: 0.5rem;
-      border: 1px solid #ccc; border-radius: 0.75rem; font-size: 1rem;
+      border: 1px solid #d3bc98; border-radius: 0.75rem; font-size: 1rem;
+      background: #fffefc;
+      font-family: 'Inter', sans-serif;
+    }
+    form input:focus,
+    form textarea:focus {
+      outline: 2px solid var(--accent);
+      background: #fffbe8;
+    }
+    form .local-warning {
+      color: #b55318;
+      font-size: 1.13rem;
+      background: #fff5e1;
+      border-radius: 0.7rem;
+      margin-bottom: 1.1rem;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid #eed8b8;
+      font-family: 'Amaranth', sans-serif;
+      text-align: center;
+      letter-spacing: 0.02em;
     }
     form button {
-      margin-top: 1.5rem; background: var(--accent); color: white;
-      padding: 1rem 2rem; border: none; border-radius: 0.75rem;
-      font-size: 1.1rem; cursor: pointer; transition: background 0.3s;
+      margin-top: 1.5rem; background: var(--accent2); color: white;
+      padding: 1rem 2rem; border: none; border-radius: 0.9rem;
+      font-size: 1.15rem; font-family: 'Amaranth', sans-serif; letter-spacing: 0.01em;
+      cursor: pointer; transition: background 0.3s, box-shadow 0.3s;
+      box-shadow: 0 1px 7px #edc18345;
     }
-    form button:hover { background: #b8854f; }
+    form button:hover { background: #b8854f; box-shadow: 0 3px 14px #c3884336; }
 
     .social-buttons { display: flex; justify-content: center; gap: 2rem;
       margin-top: 1rem; flex-wrap: wrap;
     }
     .social-buttons a {
-      background: var(--accent); color: white; padding: 1rem 2rem;
+      background: var(--accent2); color: white; padding: 1rem 2rem;
       border-radius: 2rem; font-size: 1.2rem; text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;
     }
@@ -163,17 +256,38 @@
     footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: #777; }
   </style>
   <script>
+    // Local ZIP codes for 63366 area within about 20-30 miles (customize as needed)
+    const allowedZips = [
+      "63366","63367","63368","63385","63376","63304","63303",
+      "63301","63341","63348","63365","63389","63390","63379","63369","63370"
+    ];
     document.addEventListener("DOMContentLoaded", () => {
       const sections = document.querySelectorAll(".section");
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
       }, { threshold: 0.1 });
       sections.forEach(section => observer.observe(section));
+
+      // Header shrink
       const header = document.querySelector("header");
       window.addEventListener("scroll", () => header.classList.toggle("shrink", window.scrollY > 50));
+      // Mobile nav
       const toggle = document.querySelector(".menu-toggle");
       const links = document.querySelector(".nav-links");
       toggle.addEventListener("click", () => links.classList.toggle("active"));
+
+      // Local ZIP code check for form
+      const orderForm = document.getElementById('order-form');
+      if (orderForm) {
+        orderForm.addEventListener('submit', function(e) {
+          const zip = document.getElementById('zip').value.trim();
+          if (!allowedZips.includes(zip)) {
+            alert("Sorry, we can only accept orders from the O'Fallon/Wentzville/Moscow Mills area.\nIf you are local and this is a mistake, please message us!");
+            e.preventDefault();
+            return false;
+          }
+        });
+      }
     });
   </script>
 </head>
@@ -193,46 +307,49 @@
 
   <section id="menu" class="section">
     <h2>Our Cookies</h2>
-    <div class="menu-grid">
-      <div class="cookie-card">
-        <img src="images/classic-choco-chip.jpg" alt="Classic Choco Chip">
-        <h3>Classic Choco Chip</h3>
+    <div class="menu-tagline">Small-batch, vintage-inspired, and always made with love!</div>
+    <div class="menu-label">
+      <div class="pricing-bar">
+        <span>$3 per Cookie</span>
+        <div class="divider"></div>
+        <span>$16 Half Dozen</span>
+        <div class="divider"></div>
+        <span>$30 Dozen</span>
       </div>
-      <div class="cookie-card">
-        <img src="images/cookie-butter.jpg" alt="Cookie Butter">
-        <h3>Cookie Butter</h3>
+      <div class="menu-grid">
+        <div class="cookie-card">
+          <img src="images/classic-choco-chip.jpg" alt="Classic Choco Chip">
+          <h3>Classic Choco Chip</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/cookie-butter.jpg" alt="Cookie Butter">
+          <h3>Cookie Butter</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/choco-candy.jpg" alt="Choco Candy">
+          <h3>Choco Candy</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/caramel-choco-chip.jpg" alt="Caramel Choco Chip">
+          <h3>Caramel Choco Chip</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/cookies-n-creme.jpg" alt="Cookies n' Creme">
+          <h3>Cookies n' Creme</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/oatmeal.jpg" alt="Oatmeal">
+          <h3>Oatmeal</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/snickerdoodle.jpg" alt="Snickerdoodle">
+          <h3>Snickerdoodle</h3>
+        </div>
+        <div class="cookie-card">
+          <img src="images/sugar-cookie.jpg" alt="Sugar Cookie">
+          <h3>Sugar Cookie</h3>
+        </div>
       </div>
-      <div class="cookie-card">
-        <img src="images/choco-candy.jpg" alt="Choco Candy">
-        <h3>Choco Candy</h3>
-      </div>
-      <div class="cookie-card">
-        <img src="images/caramel-choco-chip.jpg" alt="Caramel Choco Chip">
-        <h3>Caramel Choco Chip</h3>
-      </div>
-      <div class="cookie-card">
-        <img src="images/cookies-n-creme.jpg" alt="Cookies n' Creme">
-        <h3>Cookies n' Creme</h3>
-      </div>
-      <div class="cookie-card">
-        <img src="images/oatmeal.jpg" alt="Oatmeal">
-        <h3>Oatmeal</h3>
-      </div>
-      <div class="cookie-card">
-        <img src="images/snickerdoodle.jpg" alt="Snickerdoodle">
-        <h3>Snickerdoodle</h3>
-      </div>
-      <div class="cookie-card">
-        <img src="images/sugar-cookie.jpg" alt="Sugar Cookie">
-        <h3>Sugar Cookie</h3>
-      </div>
-    </div>
-    <div class="pricing-bar">
-      <span>$3 per Cookie</span>
-      <div class="divider"></div>
-      <span>$16 Half Dozen</span>
-      <div class="divider"></div>
-      <span>$30 Dozen</span>
     </div>
   </section>
 
@@ -245,11 +362,31 @@
 
   <section id="order" class="section">
     <h2>Order</h2>
-    <form action="mailto:aftersbykali@gmail.com" method="post" enctype="text/plain">
+    <div class="stepper">
+      <div class="step">
+        <div class="step-circle">1</div>
+        <div class="step-label">Choose Your Cookies</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">2</div>
+        <div class="step-label">Fill Out Form</div>
+      </div>
+      <div class="step">
+        <div class="step-circle">3</div>
+        <div class="step-label">Pick Up or Local Delivery</div>
+      </div>
+    </div>
+    <form id="order-form" action="mailto:aftersbykali@gmail.com" method="post" enctype="text/plain">
+      <div class="local-warning">
+        <strong>Local Orders Only:</strong> <br>
+        We only accept orders for local pickup or delivery within about 20–30 miles of O'Fallon, MO (ZIP 63366). Please provide your ZIP code below. If you are unsure, message us on Instagram or Facebook!
+      </div>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip" name="zip" maxlength="5" pattern="\d{5}" required placeholder="63366">
       <label for="cookies">Cookies & Quantity:</label>
       <textarea id="cookies" name="cookies" rows="5" placeholder="Ex: 1 dozen Choco Chip, 2 dozen Cookie Butter..." required></textarea>
       <label for="pickup">Pickup or Delivery Preference:</label>
@@ -266,7 +403,9 @@
     </div>
   </section>
 
-  <footer>&copy; 2025 Afters by Kali. All rights reserved.</footer>
+  <footer>&copy; 2025 Afters by Kali. All rights reserved.<br>
+    <span style="font-family:'Shadows Into Light',cursive;font-size:1.05rem; color:#b99156;">Thank you for shopping small & supporting homemade cookies!</span>
+  </footer>
 </body>
 </html>
 
