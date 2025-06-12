@@ -6,7 +6,7 @@
   <title>Afters by Kali</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amaranth&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Amaranth&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #fffaf4;
@@ -67,18 +67,23 @@
       transition: opacity 0.6s ease, transform 0.6s ease;
     }
     .section.visible { opacity: 1; transform: translateY(0); }
-    #menu h2 {
+    h2 {
       font-family: 'Amaranth', sans-serif;
-      font-size: 2.6rem; margin-bottom: 0.3rem; text-align: center;
-      letter-spacing: 0.04em;
-    }
-    .menu-tagline {
-      font-size: 1.18rem;
-      color: var(--accent2);
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
       text-align: center;
-      font-family: 'Shadows Into Light', cursive;
+      letter-spacing: 0.04em;
+      color: var(--accent2);
+      position: relative;
+    }
+    #menu h2 { margin-bottom: 0.3rem; }
+    .menu-tagline {
+      font-size: 1.15rem;
+      color: #a07940;
+      text-align: center;
+      font-family: 'Amaranth', sans-serif;
       margin-bottom: 2.1rem;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.01em;
     }
     .menu-label {
       background: var(--menu-label-bg);
@@ -154,21 +159,21 @@
       border: 1.2px solid #eadfc7;
       box-shadow: 0 1px 7px #f2e2c858;
     }
-    .cookie-card h3 { font-size: 1.28rem; margin: 0.6rem 0 0.1rem 0; font-family: 'Amaranth', sans-serif; }
+    .cookie-card h3 { font-size: 1.25rem; margin: 0.6rem 0 0.1rem 0; font-family: 'Amaranth', sans-serif; }
 
-    /* Review Card */
     .review-card {
       background: var(--review-bg);
       padding: 1.4rem 2rem 1.1rem 2rem;
       margin: 1.2rem auto;
       border-radius: 1.5rem;
       box-shadow: 0 2px 10px #e5c19126;
-      font-family: 'Shadows Into Light', cursive;
+      font-family: 'Amaranth', sans-serif;
       font-style: normal;
-      font-size: 1.18rem;
+      font-size: 1.17rem;
       color: #7c5a3b;
       max-width: 700px;
       border: 1.5px solid #eedcbb;
+      text-align: center;
     }
 
     /* Stepper */
@@ -180,7 +185,8 @@
       gap: 2.2rem;
     }
     .step {
-      display: flex; flex-direction: column; align-items: center;
+      display: flex; flex-direction
+      : column; align-items: center;
     }
     .step-circle {
       width: 34px; height: 34px; border-radius: 50%;
@@ -201,6 +207,12 @@
     }
 
     /* Order Form */
+    #order.section {
+      background: #f7f2e8;
+      border-radius: 2rem;
+      box-shadow: 0 1px 18px #ebdbbe1e;
+      margin-top: 3rem;
+    }
     form {
       background: var(--form-highlight);
       padding: 2rem;
@@ -250,10 +262,24 @@
       background: var(--accent2); color: white; padding: 1rem 2rem;
       border-radius: 2rem; font-size: 1.2rem; text-decoration: none;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1); transition: all 0.3s ease;
+      font-family: 'Amaranth', sans-serif;
+      letter-spacing: 0.02em;
     }
     .social-buttons a:hover { background: #b8854f; transform: translateY(-3px); }
 
-    footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: #777; }
+    footer {
+      text-align: center; padding: 2rem 1rem; font-size: 0.94rem; color: #b4976b;
+      font-family: 'Amaranth', sans-serif;
+      background: transparent;
+    }
+    .footer-thankyou {
+      display: block;
+      font-size: 1.13rem;
+      color: #b99156;
+      margin-top: 0.6em;
+      font-family: 'Amaranth', sans-serif;
+      letter-spacing: 0.01em;
+    }
   </style>
   <script>
     // Local ZIP codes for 63366 area within about 20-30 miles (customize as needed)
@@ -307,7 +333,7 @@
 
   <section id="menu" class="section">
     <h2>Our Cookies</h2>
-    <div class="menu-tagline">Small-batch, vintage-inspired, and always made with love!</div>
+    <div class="menu-tagline">Small batch, made from scratch!</div>
     <div class="menu-label">
       <div class="pricing-bar">
         <span>$3 per Cookie</span>
@@ -403,10 +429,9 @@
     </div>
   </section>
 
-  <footer>&copy; 2025 Afters by Kali. All rights reserved.<br>
-    <span style="font-family:'Shadows Into Light',cursive;font-size:1.05rem; color:#b99156;">Thank you for shopping small & supporting homemade cookies!</span>
+  <footer>
+    &copy; 2025 Afters by Kali. All rights reserved.
+    <span class="footer-thankyou">Thank you for shopping small & supporting homemade cookies!</span>
   </footer>
 </body>
 </html>
-
-
