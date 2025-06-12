@@ -73,6 +73,14 @@
     }
 
     .section {
+      .section:first-of-type {
+  padding-top: 7.5rem; /* or adjust as needed, 7.5rem works for your header */
+}
+@media (max-width: 700px) {
+  .section:first-of-type {
+    padding-top: 5.5rem;
+  }
+}
       padding: var(--section-pad); 
       max-width: var(--section-max); 
       margin: 0 auto 0 auto;
